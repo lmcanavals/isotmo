@@ -1,0 +1,1265 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://pucp.ontology/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/hasReached -->
+
+    <ObjectProperty rdf:about="http://pucp.ontology/hasReached"/>
+    
+
+
+    <!-- http://pucp.ontology/#achievedBy -->
+
+    <ObjectProperty rdf:about="http://pucp.ontology/#achievedBy">
+        <rdfs:domain rdf:resource="http://pucp.ontology/#Attribute"/>
+        <rdfs:range rdf:resource="http://pucp.ontology/#Practice"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/#consistOf -->
+
+    <ObjectProperty rdf:about="http://pucp.ontology/#consistOf">
+        <rdfs:range rdf:resource="http://pucp.ontology/#Process"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/#isAt -->
+
+    <ObjectProperty rdf:about="http://pucp.ontology/#isAt">
+        <rdfs:range rdf:resource="http://pucp.ontology/#CapabilityLevel"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/#Process"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/#satisfyedBy -->
+
+    <ObjectProperty rdf:about="http://pucp.ontology/#satisfyedBy">
+        <rdfs:range rdf:resource="http://pucp.ontology/#Attribute"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/#CapabilityLevel"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/AlfaAttribute2.1OT -->
+
+    <Class rdf:about="http://pucp.ontology/AlfaAttribute2.1OT">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA2.1PerformanceManagement"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP4Adjust"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP4Adjust"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaAttribute2.2OT -->
+
+    <Class rdf:about="http://pucp.ontology/AlfaAttribute2.2OT">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA2.2WorkProductManagement"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaAttributeOT -->
+
+    <Class rdf:about="http://pucp.ontology/AlfaAttributeOT">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA1.1ProcessPerformance"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification."/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification."/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification."/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaCapLevelOT -->
+
+    <Class rdf:about="http://pucp.ontology/AlfaCapLevelOT">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#CapabilityLevel"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/AlfaAttribute2.1OT"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/AlfaAttribute2.2OT"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/AlfaAttributeOT"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/AlfaAttribute2.1OT"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/AlfaAttribute2.2OT"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/AlfaAttributeOT"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaOT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/AlfaOT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1OrganizationalTestProcess"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#isAt"/>
+                        <allValuesFrom rdf:resource="http://pucp.ontology/AlfaCapLevelOT"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel1.DT.1TestDesignAndImplementationProcess -->
+
+    <Class rdf:about="http://pucp.ontology/CapabilityLevel1.DT.1TestDesignAndImplementationProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#CapabilityLevel"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <allValuesFrom rdf:resource="http://pucp.ontology/PA1.1ProcessPerformance.DT.1TestDesignAndImplementantionProcess"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel1.OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/CapabilityLevel1.OT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#CapabilityLevel"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA1.1ProcessPerformance.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel2.OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/CapabilityLevel2.OT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel1.OT.1OrganizationalTestProcess"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA1.1ProcessPerformance.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA2.1PerformanceManagement.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA2.2WorkProductManagement.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA1.1ProcessPerformance.OT.1OrganizationalTestProcess"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA2.1PerformanceManagement.OT.1OrganizationalTestProcess"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA2.2WorkProductManagement.OT.1OrganizationalTestProcess"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/DT.1TestDesignAndImplementationProcessCapLevel1 -->
+
+    <Class rdf:about="http://pucp.ontology/DT.1TestDesignAndImplementationProcessCapLevel1">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1TestDesignAndImplementationProcess"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#isAt"/>
+                        <allValuesFrom rdf:resource="http://pucp.ontology/CapabilityLevel1.DT.1TestDesignAndImplementationProcess"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/DT.1TestDesignAndImplementationProcessCapLevel2 -->
+
+    <Class rdf:about="http://pucp.ontology/DT.1TestDesignAndImplementationProcessCapLevel2">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/DT.1TestDesignAndImplementationProcessCapLevel1"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/OT.1OrganizationalTestProcesCapLevel2 -->
+
+    <Class rdf:about="http://pucp.ontology/OT.1OrganizationalTestProcesCapLevel2">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/OT.1OrganizationalTestProcessCapLevel1"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#isAt"/>
+                        <allValuesFrom rdf:resource="http://pucp.ontology/CapabilityLevel2.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/OT.1OrganizationalTestProcessCapLevel1 -->
+
+    <Class rdf:about="http://pucp.ontology/OT.1OrganizationalTestProcessCapLevel1">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1OrganizationalTestProcess"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#isAt"/>
+                        <allValuesFrom rdf:resource="http://pucp.ontology/CapabilityLevel1.OT.1OrganizationalTestProcess"/>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts -->
+
+    <Class rdf:about="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts -->
+
+    <Class rdf:about="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct -->
+
+    <Class rdf:about="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements -->
+
+    <Class rdf:about="http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA1.1ProcessPerformance.DT.1TestDesignAndImplementantionProcess -->
+
+    <Class rdf:about="http://pucp.ontology/PA1.1ProcessPerformance.DT.1TestDesignAndImplementantionProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA1.1ProcessPerformance"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP1IdentifyFeatureSets"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP2DeriveTestConditions"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP3DeriveTestCoverageItems"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP4DeriveTestCases"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP5AssembleTestSets"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#DT.1.BP6DeriveTestProcedures"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP1IdentifyFeatureSets"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP2DeriveTestConditions"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP3DeriveTestCoverageItems"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP4DeriveTestCases"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP5AssembleTestSets"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP6DeriveTestProcedures"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA1.1ProcessPerformance.OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/PA1.1ProcessPerformance.OT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA1.1ProcessPerformance"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification."/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification."/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification."/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification."/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA2.1PerformanceManagement.OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/PA2.1PerformanceManagement.OT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA2.1PerformanceManagement"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP4Adjust"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP4Adjust"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/PA2.2WorkProductManagement.OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/PA2.2WorkProductManagement.OT.1OrganizationalTestProcess">
+        <equivalentClass>
+            <Class>
+                <intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/#PA2.2WorkProductManagement"/>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <someValuesFrom rdf:resource="http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+                    </Restriction>
+                    <Restriction>
+                        <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                        <allValuesFrom>
+                            <Class>
+                                <unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                                    <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+                                </unionOf>
+                            </Class>
+                        </allValuesFrom>
+                    </Restriction>
+                </intersectionOf>
+            </Class>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#Attribute -->
+
+    <Class rdf:about="http://pucp.ontology/#Attribute">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pucp.ontology/#achievedBy"/>
+                <allValuesFrom rdf:resource="http://pucp.ontology/#Practice"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#BasePractice -->
+
+    <Class rdf:about="http://pucp.ontology/#BasePractice">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Practice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#CapabilityLevel -->
+
+    <Class rdf:about="http://pucp.ontology/#CapabilityLevel">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pucp.ontology/#satisfyedBy"/>
+                <allValuesFrom rdf:resource="http://pucp.ontology/#Attribute"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP1IdentifyFeatureSets -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP1IdentifyFeatureSets">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP2DeriveTestConditions -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP2DeriveTestConditions">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP3DeriveTestCoverageItems -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP3DeriveTestCoverageItems">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP4DeriveTestCases -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP4DeriveTestCases">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP5AssembleTestSets -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP5AssembleTestSets">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1.BP6DeriveTestProcedures -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1.BP6DeriveTestProcedures">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.1TestDesignAndImplementationProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.1TestDesignAndImplementationProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.2.BP1EstablishTestEnvironment -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.2.BP1EstablishTestEnvironment">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.2.BP2MaintainTestEnvironment -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.2.BP2MaintainTestEnvironment">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.2TestEnvironmentSetupAndMaintenanceProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.2TestEnvironmentSetupAndMaintenanceProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.3.BP1ExecuteTestProcedures -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.3.BP1ExecuteTestProcedures">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.3.BP2CompareTheResults -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.3.BP2CompareTheResults">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.3.BP3RecordTestExecution -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.3.BP3RecordTestExecution">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.3TestExecutionProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.3TestExecutionProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.4.BP1AnalyzeTestResults -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.4.BP1AnalyzeTestResults">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.4.BP2CreateUpdateIncidentReport -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.4.BP2CreateUpdateIncidentReport">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#DT.4TestIncidentReportingProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#DT.4TestIncidentReportingProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#GenericPractice -->
+
+    <Class rdf:about="http://pucp.ontology/#GenericPractice">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Practice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification. -->
+
+    <Class rdf:about="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification.">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification. -->
+
+    <Class rdf:about="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification.">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification. -->
+
+    <Class rdf:about="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification.">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#OT.1OrganizationalTestProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#OT.1OrganizationalTestProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.1.1.GP1AchieveTheProcessOutcomes -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.1.1.GP1AchieveTheProcessOutcomes">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP2PlanThePerformance -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP4Adjust -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP4Adjust">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives -->
+
+    <Class rdf:about="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#GenericPractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA1.1ProcessPerformance -->
+
+    <Class rdf:about="http://pucp.ontology/#PA1.1ProcessPerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA2.1PerformanceManagement -->
+
+    <Class rdf:about="http://pucp.ontology/#PA2.1PerformanceManagement">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA2.2WorkProductManagement -->
+
+    <Class rdf:about="http://pucp.ontology/#PA2.2WorkProductManagement">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA3.1ProcessDefinition -->
+
+    <Class rdf:about="http://pucp.ontology/#PA3.1ProcessDefinition">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA3.2ProcessDeployment -->
+
+    <Class rdf:about="http://pucp.ontology/#PA3.2ProcessDeployment">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA4.1QuantitativeAnalysis -->
+
+    <Class rdf:about="http://pucp.ontology/#PA4.1QuantitativeAnalysis">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA4.2QuantitativeControl -->
+
+    <Class rdf:about="http://pucp.ontology/#PA4.2QuantitativeControl">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA5.1ProcessInnovation -->
+
+    <Class rdf:about="http://pucp.ontology/#PA5.1ProcessInnovation">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#PA5.2ProcessInnovationImplementation -->
+
+    <Class rdf:about="http://pucp.ontology/#PA5.2ProcessInnovationImplementation">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Attribute"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#Practice -->
+
+    <Class rdf:about="http://pucp.ontology/#Practice"/>
+    
+
+
+    <!-- http://pucp.ontology/#Process -->
+
+    <Class rdf:about="http://pucp.ontology/#Process">
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://pucp.ontology/#isAt"/>
+                <allValuesFrom rdf:resource="http://pucp.ontology/#CapabilityLevel"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP10CommunicateTestPlanAndMakeAvailable -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP10CommunicateTestPlanAndMakeAvailable">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP1UnderstandContext -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP1UnderstandContext">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP2OrganizeTestPlanDevelopment -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP2OrganizeTestPlanDevelopment">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP3IdentifyAndAnalyzeRisks -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP3IdentifyAndAnalyzeRisks">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP4IdentifyRiskMitigationApproaches -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP4IdentifyRiskMitigationApproaches">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP5DesignTestStrategy -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP5DesignTestStrategy">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP6EstimateTestResources -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP6EstimateTestResources">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP7DetermineStaffingAndScheduling -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP7DetermineStaffingAndScheduling">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP8RecordTestPlan -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP8RecordTestPlan">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1.BP9GainConsensusOnTestPlan -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1.BP9GainConsensusOnTestPlan">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.1TestPlanningProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.1TestPlanningProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.2.BP1SetUp -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.2.BP1SetUp">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.2.BP2Monitor -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.2.BP2Monitor">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.2.BP3Control -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.2.BP3Control">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.2.BP4Report -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.2.BP4Report">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.2TestMonitoringAndControlProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.2TestMonitoringAndControlProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.3.BP1ArchiveTestAssets -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.3.BP1ArchiveTestAssets">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.3.BP2CleanUpTestEnvironment -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.3.BP2CleanUpTestEnvironment">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.3.BP3IdentifyLessonsLearned -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.3.BP3IdentifyLessonsLearned">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.3.BP4ReportTestCompletion -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.3.BP4ReportTestCompletion">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#BasePractice"/>
+    </Class>
+    
+
+
+    <!-- http://pucp.ontology/#TM.3TestCompletionProcess -->
+
+    <Class rdf:about="http://pucp.ontology/#TM.3TestCompletionProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/#Process"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.1.1.GP1AchieveTheProcessOutcomes"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP2PlanThePerformance"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP3MonitorThePerformance"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP4Adjust"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP5DefineResponsibilitiesAndAuthorities"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP6PrepareThosePerformingTheProcess"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP7IdentifyAndMakeAvailableResources"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1.GP8ManageTheInterfaces"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#PA.2.1GP1IdentifyTheObjectives"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP1IdentifyFeatureSets"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP2DeriveTestConditions"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP3DeriveTestCoverageItems"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP4DeriveTestCases"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP5AssembleTestSets"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.1.BP6DeriveTestProcedures"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.2.BP1EstablishTestEnvironment"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.2.BP2MaintainTestEnvironment"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.3.BP1ExecuteTestProcedures"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.3.BP2CompareTheResults"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.3.BP3RecordTestExecution"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.4.BP1AnalyzeTestResults"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#DT.4.BP2CreateUpdateIncidentReport"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP1DevelopOrganizationalTestEpecification."/>
+            <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP2MonitorAndControlUseOfOrganizationalTestSpecification."/>
+            <rdf:Description rdf:about="http://pucp.ontology/#OT.1.BP3UpdateOrganizationalTestEpecification."/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP10CommunicateTestPlanAndMakeAvailable"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP1UnderstandContext"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP2OrganizeTestPlanDevelopment"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP3IdentifyAndAnalyzeRisks"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP4IdentifyRiskMitigationApproaches"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP5DesignTestStrategy"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP6EstimateTestResources"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP7DetermineStaffingAndScheduling"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP8RecordTestPlan"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.1.BP9GainConsensusOnTestPlan"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.2.BP1SetUp"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.2.BP2Monitor"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.2.BP3Control"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.2.BP4Report"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.3.BP1ArchiveTestAssets"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.3.BP2CleanUpTestEnvironment"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.3.BP3IdentifyLessonsLearned"/>
+            <rdf:Description rdf:about="http://pucp.ontology/#TM.3.BP4ReportTestCompletion"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP1DefineTheRequirementsForTheWorkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP3IdentifyDocumentAndControlTheWorkProduct"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA.2.2.GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
