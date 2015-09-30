@@ -1,19 +1,13 @@
 package pucp.isotesting;
 
-import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
 import com.hp.hpl.jena.rdf.model.InfModel;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
-import com.hp.hpl.jena.rdf.model.StmtIterator;
 import com.hp.hpl.jena.reasoner.Reasoner;
 import com.hp.hpl.jena.reasoner.ReasonerRegistry;
-import com.hp.hpl.jena.util.PrintUtil;
-import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
-import java.util.Iterator;
 
 public class IsoMain5 {
 
@@ -41,7 +35,7 @@ public class IsoMain5 {
         System.out.println("Creando InfModel");
         Reasoner reasoner = ReasonerRegistry.getOWLReasoner();
         InfModel im = ModelFactory.createInfModel(reasoner, m);
-        Resource procOT1 = im.getResource(NS + "OT1OrganizationalTestProcessCapLevel2");
+        Resource procOT1 = im.getResource(NS + "OT1OrganizationalTestProcessCapLevel2"); // cambiar a nivel 1 y debe botar YES
         Resource procAlfa = im.getResource(NS + "AlfaOT1");
         if (procOT1 == null) {
             System.out.println(":( OT");
