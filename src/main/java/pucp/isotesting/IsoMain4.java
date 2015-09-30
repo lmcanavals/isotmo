@@ -15,13 +15,13 @@ import com.hp.hpl.jena.vocabulary.RDF;
 import com.hp.hpl.jena.vocabulary.RDFS;
 import java.util.Iterator;
 
-public class IsoMain2 {
+public class IsoMain4 {
 
     private final String NS = "http://pucp.ontology/";
-    private final String FN = "isoTestingOntologyv15.2.xml";
+    private final String FN = "isoTestingOntologyv16.xml";
 
     public static void main(String[] args) {
-        new IsoMain2().go();
+        new IsoMain4().go();
     }
 
     private void go() {
@@ -30,7 +30,7 @@ public class IsoMain2 {
         m.read(FN);
 
         System.out.println("Recuperando una clase: ");
-        OntClass p1 = m.getOntClass(NS + "OT.1OrganizationalTestProcessCapLevel1");
+        OntClass p1 = m.getOntClass(NS + "Process1");
 
         /*System.out.println("Listando subclases de : " + p1.getURI());
         for (Iterator<OntClass> i = p1.listSubClasses(); i.hasNext();) {
@@ -41,8 +41,8 @@ public class IsoMain2 {
         System.out.println("Creando InfModel");
         Reasoner reasoner = ReasonerRegistry.getOWLReasoner();
         InfModel im = ModelFactory.createInfModel(reasoner, m);
-        Resource procOT1 = im.getResource(NS + "OT.1OrganizationalTestProcess");
-        Resource procAlfa = im.getResource(NS + "AlfaOT.1OrganizationalTestProcess");
+        Resource procOT1 = im.getResource(NS + "Process1CapLevel2");
+        Resource procAlfa = im.getResource(NS + "AlfaP");
         if (procOT1 == null) {
             System.out.println(":( OT");
         }

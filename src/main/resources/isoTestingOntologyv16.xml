@@ -1,0 +1,397 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://pucp.ontology/"
+     xml:base="http://pucp.ontology/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://pucp.ontology/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/achievedBy -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/achievedBy">
+        <rdfs:domain rdf:resource="http://pucp.ontology/Attribute"/>
+        <rdfs:range rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/isAt -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/isAt">
+        <rdfs:range rdf:resource="http://pucp.ontology/CapabilityLevel"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/satisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/satisfiedBy">
+        <rdfs:range rdf:resource="http://pucp.ontology/Attribute"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/CapabilityLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/AlfaA -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaA">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaA2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaA2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice2"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaA3 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaA3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice3"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaCL -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaCL">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaA"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaA2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaA3"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaP -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaP">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Process1"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaCL"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Attribute -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Attribute"/>
+    
+
+
+    <!-- http://pucp.ontology/Attribute1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Attribute1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Attribute2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Attribute2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice2"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Attribute3 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Attribute3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Attribute"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice3"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Practice4"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/CapLevel1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapLevel1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Attribute1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/CapLevel2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapLevel2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapLevel1"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Attribute2"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/Attribute3"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapabilityLevel"/>
+    
+
+
+    <!-- http://pucp.ontology/Practice -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice"/>
+    
+
+
+    <!-- http://pucp.ontology/Practice1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice1">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Practice2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice2">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Practice3 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice3">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Practice4 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice4">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Process -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Process"/>
+    
+
+
+    <!-- http://pucp.ontology/Process1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Process1">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Process1CapLevel1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Process1CapLevel1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Process1"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/CapLevel1"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Process1CapLevel2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Process1CapLevel2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/Process1CapLevel1"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/CapLevel2"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/Attribute1"/>
+            <rdf:Description rdf:about="http://pucp.ontology/Attribute2"/>
+            <rdf:Description rdf:about="http://pucp.ontology/Attribute3"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/Practice1"/>
+            <rdf:Description rdf:about="http://pucp.ontology/Practice2"/>
+            <rdf:Description rdf:about="http://pucp.ontology/Practice3"/>
+            <rdf:Description rdf:about="http://pucp.ontology/Practice4"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
