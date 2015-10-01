@@ -51,21 +51,27 @@ public class IsoMain8 {
         aux.addProperty(satisfiedBy, ot1bp1);
         aux.addProperty(satisfiedBy, ot1bp2);
         aux.addProperty(satisfiedBy, ot1bp3);
-        betaAttribute1.addProperty(OWL.intersectionOf, aux);
+        aux2 = m.createClass();
+        aux2.addProperty(OWL.intersectionOf, aux);
+        betaAttribute1.addProperty(OWL.equivalentClass, aux2);
         
         System.out.println("Creando nivel de capacidad BETA");
         Resource betaCapLevel = m.createClass(NS + "BetaCapLevel");
         aux  = m.createList();
         aux.addProperty(RDFS.subClassOf, capLevelOT);
         aux.addProperty(achievedBy, betaAttribute1);
-        betaCapLevel.addProperty(OWL.intersectionOf, aux);
+        aux2 = m.createClass();
+        aux2.addProperty(OWL.intersectionOf, aux);
+        betaCapLevel.addProperty(OWL.equivalentClass, aux2);
         
         System.out.println("Creando proceso BETA...");
         Resource betaProc = m.createClass(NS + "Beta");
         aux  = m.createList();
         aux.addProperty(RDFS.subClassOf, procOT0);
         aux.addProperty(isAt, betaCapLevel);
-        betaProc.addProperty(OWL.intersectionOf, aux);
+        aux2 = m.createClass();
+        aux2.addProperty(OWL.intersectionOf, aux);
+        betaProc.addProperty(OWL.equivalentClass, aux2);
                 
         System.out.println("Creando InfModel");
         Reasoner reasoner = ReasonerRegistry.getOWLReasoner();
