@@ -1,0 +1,621 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://pucp.ontology/"
+     xml:base="http://pucp.ontology/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://pucp.ontology/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/achievedBy -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/achievedBy">
+        <rdfs:range rdf:resource="http://pucp.ontology/Attribute"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/CapabilityLevel"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/isAt -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/isAt">
+        <rdfs:range rdf:resource="http://pucp.ontology/CapabilityLevel"/>
+        <rdfs:domain rdf:resource="http://pucp.ontology/Process"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://pucp.ontology/satisfiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://pucp.ontology/satisfiedBy">
+        <rdfs:domain rdf:resource="http://pucp.ontology/Attribute"/>
+        <rdfs:range rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://pucp.ontology/AlfaCapLevel -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaCapLevel">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaPA11"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaPA21"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaPA22"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaOT1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaOT1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/OT1OrganizationalTestProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/AlfaCapLevel"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaPA11 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaPA11">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA11ProcessPerformance"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaPA21 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaPA21">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA21PerformanceManagement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP1IdentifyTheObjectives"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP2PlanThePerformance"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP3MonitorThePerformance"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP4Adjust"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP5DefineResponsibilitiesAndAuthorities"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP6PrepareThosePerformingTheProcess"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP7IdentifyAndMakeAvailableResources"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP8ManageTheInterfaces"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/AlfaPA22 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/AlfaPA22">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA22WorkProductManagement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP1DefineTheRequirementsForTheWorkProducts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Attribute -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Attribute"/>
+    
+
+
+    <!-- http://pucp.ontology/BasePractice -->
+
+    <owl:Class rdf:about="http://pucp.ontology/BasePractice">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapabilityLevel"/>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel1OT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapabilityLevel1OT1OrganizationalTestProcess">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA11ProcessPerformanceOT1OrganizationalTestProcess"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/CapabilityLevel2OT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/CapabilityLevel2OT1OrganizationalTestProcess">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/CapabilityLevel1OT1OrganizationalTestProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21PerformanceManagementOT1OrganizationalTestProcess"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/achievedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22WorkProductManagementOT1OrganizationalTestProcess"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/GenericPractice -->
+
+    <owl:Class rdf:about="http://pucp.ontology/GenericPractice">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Practice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/BasePractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/BasePractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/BasePractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1OrganizationalTestProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Process"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1OrganizationalTestProcessCapLevel1 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1OrganizationalTestProcessCapLevel1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/OT1OrganizationalTestProcess"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/CapabilityLevel1OT1OrganizationalTestProcess"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/OT1OrganizationalTestProcessCapLevel2 -->
+
+    <owl:Class rdf:about="http://pucp.ontology/OT1OrganizationalTestProcessCapLevel2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/OT1OrganizationalTestProcessCapLevel1"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/isAt"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/CapabilityLevel2OT1OrganizationalTestProcess"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA11ProcessPerformance -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA11ProcessPerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA11ProcessPerformanceOT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA11ProcessPerformanceOT1OrganizationalTestProcess">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA11ProcessPerformance"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP1IdentifyTheObjectives -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP1IdentifyTheObjectives">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP2PlanThePerformance -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP2PlanThePerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP3MonitorThePerformance -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP3MonitorThePerformance">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP4Adjust -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP4Adjust">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP5DefineResponsibilitiesAndAuthorities -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP5DefineResponsibilitiesAndAuthorities">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP6PrepareThosePerformingTheProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP6PrepareThosePerformingTheProcess">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP7IdentifyAndMakeAvailableResources -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP7IdentifyAndMakeAvailableResources">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21GP8ManageTheInterfaces -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21GP8ManageTheInterfaces">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21PerformanceManagement -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21PerformanceManagement">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA21PerformanceManagementOT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA21PerformanceManagementOT1OrganizationalTestProcess">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA21PerformanceManagement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP1IdentifyTheObjectives"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP2PlanThePerformance"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP3MonitorThePerformance"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP4Adjust"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP5DefineResponsibilitiesAndAuthorities"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP6PrepareThosePerformingTheProcess"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP7IdentifyAndMakeAvailableResources"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA21GP8ManageTheInterfaces"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22GP1DefineTheRequirementsForTheWorkProducts -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22GP1DefineTheRequirementsForTheWorkProducts">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22GP3IdentifyDocumentAndControlTheWorkProduct -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22GP3IdentifyDocumentAndControlTheWorkProduct">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/GenericPractice"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22WorkProductManagement -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22WorkProductManagement">
+        <rdfs:subClassOf rdf:resource="http://pucp.ontology/Attribute"/>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/PA22WorkProductManagementOT1OrganizationalTestProcess -->
+
+    <owl:Class rdf:about="http://pucp.ontology/PA22WorkProductManagementOT1OrganizationalTestProcess">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://pucp.ontology/PA22WorkProductManagement"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP1DefineTheRequirementsForTheWorkProducts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP3IdentifyDocumentAndControlTheWorkProduct"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/PA22GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://pucp.ontology/Practice -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Practice"/>
+    
+
+
+    <!-- http://pucp.ontology/Process -->
+
+    <owl:Class rdf:about="http://pucp.ontology/Process"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+            <rdf:Description rdf:about="http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification"/>
+            <rdf:Description rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP1IdentifyTheObjectives"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP2PlanThePerformance"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP3MonitorThePerformance"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP4Adjust"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP5DefineResponsibilitiesAndAuthorities"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP6PrepareThosePerformingTheProcess"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP7IdentifyAndMakeAvailableResources"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA21GP8ManageTheInterfaces"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA22GP1DefineTheRequirementsForTheWorkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA22GP2DefineTheRequirementsForDocumentationAndControlOfWworkProducts"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA22GP3IdentifyDocumentAndControlTheWorkProduct"/>
+            <rdf:Description rdf:about="http://pucp.ontology/PA22GP4ReviewAndAdjustWorkProductsToMeetDefinedRequirements"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+

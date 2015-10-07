@@ -1,5 +1,6 @@
 package pucp.isotesting;
 
+import pucp.isotesting.temp.*;
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.ontology.OntModelSpec;
@@ -11,28 +12,19 @@ import com.hp.hpl.jena.reasoner.ReasonerRegistry;
 import com.hp.hpl.jena.vocabulary.OWL;
 import com.hp.hpl.jena.vocabulary.RDFS;
 
-public class IsoMain5 {
+public class IsoMainAlfa {
 
     private final String NS = "http://pucp.ontology/";
     private final String FN = "isoTestingOntologyv17.xml";
 
     public static void main(String[] args) {
-        new IsoMain5().go();
+        new IsoMainAlfa().go();
     }
 
     private void go() {
         System.out.println("Iniciando: cargando ontología");
         OntModel m = ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM_MICRO_RULE_INF);
         m.read(FN);
-
-        /*System.out.println("Recuperando una clase: ");
-        OntClass p1 = m.getOntClass(NS + "OT1OrganizationalTestProcess");
-
-        System.out.println("Listando subclases de : " + p1.getURI());
-        for (Iterator<OntClass> i = p1.listSubClasses(); i.hasNext();) {
-            OntClass c = i.next();
-            System.out.println(c.getURI());
-        }*/
 
         System.out.println("Creando InfModel");
         OntClass procOT0 = m.getOntClass(NS + "OT1OrganizationalTestProcess");

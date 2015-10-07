@@ -1,4 +1,4 @@
-package pucp.isotesting;
+package pucp.isotesting.temp;
 
 import com.hp.hpl.jena.ontology.OntClass;
 import com.hp.hpl.jena.ontology.OntModel;

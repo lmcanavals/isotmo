@@ -1,4 +1,4 @@
-package pucp.isotesting;
+package pucp.isotesting.temp;
 
 import org.semanticweb.HermiT.Reasoner;
 import org.semanticweb.owlapi.apibinding.OWLManager;

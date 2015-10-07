@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pucp.isotesting;
+package pucp.isotesting.temp;
 
 import com.hp.hpl.jena.rdf.model.*;
 import com.hp.hpl.jena.reasoner.*;
@@ -14,11 +14,11 @@ import com.hp.hpl.jena.vocabulary.RDF;
  *
  * @author martin.canaval
  */
-public class IsoMain {
+public class IsoMain1 {
     private final String ONTO_URI = "http://pucp.ontology/";
 
     public static void main(String[] args) {
-        new IsoMain().go();
+        new IsoMain1().go();
     }
 
     private void go() {
