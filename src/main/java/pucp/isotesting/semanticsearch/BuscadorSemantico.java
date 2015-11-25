@@ -17,14 +17,15 @@ public class BuscadorSemantico {
     public static void main(String[] args) throws IOException, ParseException {
         Indexador indexador = new Indexador();
         Buscador buscador = new Buscador();
-        PizzaOntology po = new PizzaOntology();
+        //PizzaOntology po = new PizzaOntology();
+        ISOTMOntology isotmo = new ISOTMOntology();
         indexador.indexarDocumentosEjemplo();
        
         // para obtener la URI se sugiere hacer alguna UI interactiva para seleccionarla.
         String texto = "vegetable";
-        String uri = "http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping";
+        String uri = Util.NS + "Practice";
         
-        String deClase = expandirConsulta(po, uri);
+        String deClase = expandirConsulta(isotmo, uri);
         buscador.crearBuscador();
         System.out.println("==>> Buscador textual");
         buscador.buscarDocumentos(texto);
@@ -33,7 +34,8 @@ public class BuscadorSemantico {
         buscador.cerrarBuscador();
     }
 
-    private static String expandirConsulta(PizzaOntology po, String uri) {
+    //private static String expandirConsulta(PizzaOntology po, String uri) {
+    private static String expandirConsulta(ISOTMOntology po, String uri) {
         String deClases = "";
         List<String> listaClases = po.obtenerSubClases(uri);
         for (String nmClase : listaClases) {
