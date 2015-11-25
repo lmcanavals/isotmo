@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.w3.org/2002/07/owl"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <Ontology rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasBase -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasBase">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasIngredient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasIngredient -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasIngredient">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <inverseOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isIngredientOf"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasIngredient"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isBaseOf -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isBaseOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+        <inverseOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasBase"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isIngredientOf"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isIngredientOf -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isIngredientOf">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isToppingOf -->
+
+    <ObjectProperty rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isToppingOf">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+        <inverseOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#isIngredientOf"/>
+    </ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanHotPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanHotPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#JalapenoPepperTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <allValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#JalapenoPepperTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+                        </unionOf>
+                    </Class>
+                </allValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanaPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <allValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+                        </unionOf>
+                    </Class>
+                </allValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AnchovyTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AnchovyTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CaperTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CaperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheesyPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheesyPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#DeepPan -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#DeepPan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+        <disjointWith rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ThinAndCrispy"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#GreenPepperTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#GreenPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#HamTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#HamTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#JalapenoPepperTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#JalapenoPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MargheritaPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MargheritaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <allValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+                        </unionOf>
+                    </Class>
+                </allValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping"/>
+        <disjointWith rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ParmezanTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MushroomTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MushroomTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OliveTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OliveTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OnionTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OnionTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ParmezanTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ParmezanTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza">
+        <equivalentClass>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasBase"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+            </Restriction>
+        </equivalentClass>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping">
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PrawnTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PrawnTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ProbeInconsistentTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ProbeInconsistentTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+        <rdfs:comment rdf:datatype="&xsd;string">This class should be inconsistent when the ontology is classified.</rdfs:comment>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#RedPepperTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#RedPepperTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SalamiTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SalamiTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SohoPizza -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SohoPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#NamedPizza"/>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ParmezanTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <allValuesFrom>
+                    <Class>
+                        <unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MozzarellaTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OliveTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ParmezanTopping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+                        </unionOf>
+                    </Class>
+                </allValuesFrom>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <Restriction>
+                <onProperty rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#hasTopping"/>
+                <someValuesFrom rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OliveTopping"/>
+            </Restriction>
+        </rdfs:subClassOf>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SpicyBeefTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SpicyBeefTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ThinAndCrispy -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#ThinAndCrispy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TunaTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TunaTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping"/>
+    </Class>
+    
+
+
+    <!-- http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping -->
+
+    <Class rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+    </Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CheeseTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MeatTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SeafoodTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#VegetableTopping"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#HamTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperoniTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SalamiTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SpicyBeefTopping"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanHotPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AmericanaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MargheritaPizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#SohoPizza"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#AnchovyTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PrawnTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TunaTopping"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#CaperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#MushroomTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OliveTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#OnionTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#TomatoTopping"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#Pizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaBase"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#PizzaTopping"/>
+        </members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#GreenPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#JalapenoPepperTopping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/andres/ontologies/2014/7/untitled-ontology-5#RedPepperTopping"/>
+        </members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net -->
+
