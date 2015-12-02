@@ -23,23 +23,25 @@ public class BuscadorSemantico {
     }
 
     public void go(String[] args) throws IOException, ParseException {
-        char op;
+        String op;
         Scanner in = new Scanner(System.in);
         do {
             menu();
-            op = in.next(".").charAt(0);
-            switch (op) {
+            op = in.nextLine();
+            switch (op.charAt(0)) {
                 case '0': System.out.println(" --- Bye bye! --- "); break;
                 case '1':
                     indexador.indexarDocumentosEjemplo();
                     break;
                 case '2':
+                    System.out.println("Ingrese el texto: ");
                     String texto = in.nextLine();
                     buscador.crearBuscador();
                     buscador.buscarDocumentos(texto);
                     buscador.cerrarBuscador();
                     break;
                 case '3':
+                    System.out.println("Ingrese la clase: ");
                     String uri = Util.NS + in.nextLine();
                     String deClase = expandirConsulta(isotmo, uri);
                     buscador.crearBuscador();
@@ -48,7 +50,7 @@ public class BuscadorSemantico {
                     break;
                 default: System.out.println(" --- Opción incorrecta --- ");
             }
-        } while (op != '0');
+        } while (op.charAt(0) != '0');
     }
 
     public static void main(String[] args) throws IOException, ParseException {
@@ -56,7 +58,7 @@ public class BuscadorSemantico {
     }
 
     //private static String expandirConsulta(PizzaOntology po, String uri) {
-    private static String expandirConsulta(ISOTMOntology po, String uri) {
+    private String expandirConsulta(ISOTMOntology po, String uri) {
         String deClases = "";
         List<String> listaClases = po.obtenerSubClases(uri);
         for (String nmClase : listaClases) {
