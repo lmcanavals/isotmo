@@ -121,7 +121,7 @@
                     <rdf:Description rdf:about="http://pucp.ontology/PA11ProcessPerformance"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
-                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestSpecification"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
@@ -129,7 +129,7 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
-                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestSpecification"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -278,9 +278,9 @@
 
 
 
-    <!-- http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification -->
+    <!-- http://pucp.ontology/OT1BP1DevelopOrganizationalTestSpecification -->
 
-    <owl:Class rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification">
+    <owl:Class rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestSpecification">
         <rdfs:subClassOf rdf:resource="http://pucp.ontology/BasePractice"/>
     </owl:Class>
 
@@ -294,9 +294,9 @@
 
 
 
-    <!-- http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification -->
+    <!-- http://pucp.ontology/OT1BP3UpdateOrganizationalTestSpecification -->
 
-    <owl:Class rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification">
+    <owl:Class rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestSpecification">
         <rdfs:subClassOf rdf:resource="http://pucp.ontology/BasePractice"/>
     </owl:Class>
 
@@ -363,7 +363,7 @@
                     <rdf:Description rdf:about="http://pucp.ontology/PA11ProcessPerformance"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
-                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP1DevelopOrganizationalTestSpecification"/>
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
@@ -371,7 +371,7 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://pucp.ontology/satisfiedBy"/>
-                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+                        <owl:someValuesFrom rdf:resource="http://pucp.ontology/OT1BP3UpdateOrganizationalTestSpecification"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -591,9 +591,9 @@
     <rdf:Description>
         <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
         <owl:members rdf:parseType="Collection">
-            <rdf:Description rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestEpecification"/>
+            <rdf:Description rdf:about="http://pucp.ontology/OT1BP1DevelopOrganizationalTestSpecification"/>
             <rdf:Description rdf:about="http://pucp.ontology/OT1BP2MonitorAndControlUseOfOrganizationalTestSpecification"/>
-            <rdf:Description rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestEpecification"/>
+            <rdf:Description rdf:about="http://pucp.ontology/OT1BP3UpdateOrganizationalTestSpecification"/>
         </owl:members>
     </rdf:Description>
     <rdf:Description>

@@ -25,6 +25,7 @@ public class BuscadorSemantico {
     public void go(String[] args) throws IOException, ParseException {
         String op;
         Scanner in = new Scanner(System.in);
+        buscador.crearBuscador();
         do {
             menu();
             op = in.nextLine();
@@ -36,21 +37,18 @@ public class BuscadorSemantico {
                 case '2':
                     System.out.println("Ingrese el texto: ");
                     String texto = in.nextLine();
-                    buscador.crearBuscador();
                     buscador.buscarDocumentos(texto);
-                    buscador.cerrarBuscador();
                     break;
                 case '3':
                     System.out.println("Ingrese la clase: ");
                     String uri = Util.NS + in.nextLine();
                     String deClase = expandirConsulta(isotmo, uri);
-                    buscador.crearBuscador();
                     buscador.buscarDocumentosPorClase(deClase);
-                    buscador.cerrarBuscador();
                     break;
                 default: System.out.println(" --- Opción incorrecta --- ");
             }
         } while (op.charAt(0) != '0');
+        buscador.cerrarBuscador();
     }
 
     public static void main(String[] args) throws IOException, ParseException {
