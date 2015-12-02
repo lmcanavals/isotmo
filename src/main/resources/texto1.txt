@@ -1,2 +1,51 @@
-1. The Original: Neapolitan
-This is the original pizza that left Italy and arrived with Italian immigrants in the United States.  This is the pizza that launched American pizza fanaticism.  In fact, Italy has sought UNESCO heritage protection for the Neapolitan pizza .  The dough is made from Tipo 00 wheat flour and the crust is thin, crunchy, and baked in a wood-fired oven.  The pizza  should have minimal toppings --- perhaps San Marzano tomato sauce, bufala mozzarella cheese, and basil --- because too much sauce or cheese will weigh down the crust and make it soggy.
+1. Organization Alfa
+
+
+Organizational Test Process Area Specific Findings:
+
+
+DESCRIPTION
+
+The  Organizational  Test  Process  comprises  activities  for  the  creation,  review  and  maintenance  of organizational test specifications. It also covers the monitoring of organizational compliance with them. As a result of the successful implementation of the Organizational Test Process:
+a)  The requirements for organizational test specifications are identified;
+b)  The organizational test specifications are developed;
+c)  The organizational test specifications are agreed to by stakeholder(s);
+d)  The organizational test specifications are made accessible;
+e)  Conformance to the organizational test specifications is monitored;
+f)  Updates to organizational test specifications are agreed to by stakeholder(s); and
+g)  Updates to the organizational test specifications are made.
+
+
+
+ALTERNATE PRACTICES
+
+None identified.
+
+
+WEAKNESSES
+
+Analysis of peer review data is limited to correcting individual findings. No evidence was observed of analysis performed on collective issues identified during peer reviews to determine underlying issues with groups of work products or with the peer review process.
+
+
+IMPROVEMENT ACTIVITIES
+
+None identified.
+
+
+DISCUSSION
+
+Analysis of the data across multiple peer reviews provides insights into problem areas both in the work products and in the processes used to create the work products. Defect density by functional area in requirements, as an example, highlights areas that may not be well understood and likely to produce additional defects later in the process if not addressed early. There was no evidence observed of this type of analysis.
+
+
+RECOMMENDATIONS
+None identified.
+
+
+APPRAISAL RISK
+Low
+A similarly experienced team reviewing similar data would very likely document the same issues as this team.
+
+
+BUSINESS RISK
+Low
+However, the weakness related to analyzing peer review data impacts the ability to look for trends in issues found, which in turn impacts the ability to implement corrective actions which may prevent future issues from occurring.

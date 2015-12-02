@@ -1,37 +1,58 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pucp.isotesting.semanticsearch;
 
 import java.io.IOException;
 import java.util.List;
 import org.apache.lucene.queryparser.classic.ParseException;
+import java.util.Scanner;
 
 /**
  *
  * @author n221
  */
 public class BuscadorSemantico {
+
+    private Indexador indexador = new Indexador();
+    private Buscador buscador = new Buscador();
+    private ISOTMOntology isotmo = new ISOTMOntology();
+
+    private void  menu() {
+        System.out.println("1. Indexar el asunto");
+        System.out.println("2. Consulta de texto");
+        System.out.println("3. Consulta semantica");
+        System.out.println("\n0. Salir");
+    }
+
+    public void go(String[] args) throws IOException, ParseException {
+        char op;
+        Scanner in = new Scanner(System.in);
+        do {
+            menu();
+            op = in.next(".").charAt(0);
+            switch (op) {
+                case '0': System.out.println(" --- Bye bye! --- "); break;
+                case '1':
+                    indexador.indexarDocumentosEjemplo();
+                    break;
+                case '2':
+                    String texto = in.nextLine();
+                    buscador.crearBuscador();
+                    buscador.buscarDocumentos(texto);
+                    buscador.cerrarBuscador();
+                    break;
+                case '3':
+                    String uri = Util.NS + in.nextLine();
+                    String deClase = expandirConsulta(isotmo, uri);
+                    buscador.crearBuscador();
+                    buscador.buscarDocumentosPorClase(deClase);
+                    buscador.cerrarBuscador();
+                    break;
+                default: System.out.println(" --- Opción incorrecta --- ");
+            }
+        } while (op != '0');
+    }
+
     public static void main(String[] args) throws IOException, ParseException {
-        Indexador indexador = new Indexador();
-        Buscador buscador = new Buscador();
-        //PizzaOntology po = new PizzaOntology();
-        ISOTMOntology isotmo = new ISOTMOntology();
-        indexador.indexarDocumentosEjemplo();
-       
-        // para obtener la URI se sugiere hacer alguna UI interactiva para seleccionarla.
-        String texto = "vegetable";
-        String uri = Util.NS + "Practice";
-        
-        String deClase = expandirConsulta(isotmo, uri);
-        buscador.crearBuscador();
-        System.out.println("==>> Buscador textual");
-        buscador.buscarDocumentos(texto);
-        System.out.println("==>> Buscador semantico");
-        buscador.buscarDocumentosPorClase(deClase);
-        buscador.cerrarBuscador();
+        new BuscadorSemantico().go(args);
     }
 
     //private static String expandirConsulta(PizzaOntology po, String uri) {
